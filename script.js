@@ -10,12 +10,8 @@ function updateNavbar() {
 window.addEventListener('scroll', updateNavbar);
 updateNavbar();
 
-const counters = document.querySelectorAll('.counter-num');
-let countersStarted = false;
-
 function animateCounters() {
-  if (countersStarted) return;
-  countersStarted = true;
+  const counters = document.querySelectorAll('.counter-num');
   counters.forEach(counter => {
     const target = parseInt(counter.getAttribute('data-target'), 10);
     const duration = 1400;
@@ -35,33 +31,10 @@ function animateCounters() {
   });
 }
 
-const counterSection = document.getElementById('counters');
-
-if (counterSection) {
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCounters();
-        }
-      });
-    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
-
-    observer.observe(counterSection);
-
-    const rect = counterSection.getBoundingClientRect();
-    if (rect.top < window.innerHeight) {
-      animateCounters();
-    }
-  } else {
-    animateCounters();
-  }
-
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      if (!countersStarted) animateCounters();
-    }, 2500);
-  });
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', animateCounters);
+} else {
+  animateCounters();
 }
 
 const canvas = document.getElementById('rippleCanvas');
