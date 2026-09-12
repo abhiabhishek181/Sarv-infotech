@@ -180,6 +180,7 @@ body {
     height: 430px;
     object-fit: cover;
     border-radius: 7px;
+    display: block;
 }
 
 .about-content h3 {
@@ -528,4 +529,4 @@ body.dark .journey {
     .quote-content h2 {
         font-size: 26px;
     }
-  }
+    }
