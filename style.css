@@ -11,8 +11,18 @@ html {
 body {
     font-family: Arial, sans-serif;
     background: #f5f8fa;
-    color: #172b4d;
+    color: #172b3a;
     line-height: 1.7;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
 }
 
 .navbar {
@@ -21,51 +31,40 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: white;
+    background: #082c46;
+    color: white;
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid #e5e7eb;
 }
 
-.logo {
-    font-size: 21px;
-    font-weight: bold;
-    color: #006d9c;
+.navbar h2 {
+    font-size: 22px;
 }
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 .nav-links a {
-    color: #172b4d;
-    text-decoration: none;
-    font-size: 15px;
+    color: white;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: #0077a8;
-}
-
-#themeBtn {
-    padding: 8px 14px;
-    border: 1px solid #0077a8;
-    border-radius: 5px;
-    background: white;
-    color: #0077a8;
-    cursor: pointer;
+    color: #f4c430;
 }
 
 .hero {
-    min-height: 650px;
-    padding: 80px 8%;
+    min-height: 620px;
+    padding: 70px 8%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 60px;
-    background: #eaf6fa;
+    background: #eaf4f8;
 }
 
 .hero-text {
@@ -73,411 +72,433 @@ body {
 }
 
 .subtitle {
-    color: #0077a8;
-    font-size: 14px;
+    color: #087ea4;
+    font-size: 13px;
     font-weight: bold;
     letter-spacing: 2px;
+    margin-bottom: 12px;
 }
 
 .hero h1 {
-    font-size: 70px;
+    font-size: 75px;
     line-height: 1.1;
-    margin: 12px 0;
-    color: #12344d;
+    color: #082c46;
 }
 
-.hero h2 {
-    font-size: 24px;
-    font-weight: normal;
-    margin-bottom: 20px;
+.hero h1 span {
+    color: #087ea4;
 }
 
-.hero p {
-    color: #536777;
+.hero h3 {
+    font-size: 25px;
+    margin: 15px 0;
+    color: #34495e;
 }
 
-.button {
+.hero-text > p:not(.subtitle) {
+    color: #5b6b77;
+    max-width: 550px;
+}
+
+.btn {
     display: inline-block;
     margin-top: 25px;
-    padding: 12px 22px;
-    background: #0077a8;
+    padding: 12px 25px;
+    background: #087ea4;
     color: white;
-    text-decoration: none;
     border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-.button:hover {
-    background: #005f85;
+.btn:hover {
+    background: #065d7a;
+    transform: translateY(-2px);
 }
 
-.hero-image img {
-    width: 360px;
-    height: 460px;
+.hero-photo {
+    width: 390px;
+    height: 470px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    flex-shrink: 0;
+}
+
+.hero-photo img {
     object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+    object-position: center top;
 }
 
 .facts {
-    padding: 45px 8%;
+    width: 84%;
+    margin: -35px auto 70px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
     background: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .fact {
     text-align: center;
-    padding: 20px;
-    border-right: 1px solid #ddd;
+    padding: 25px;
+    border-right: 1px solid #e1e7eb;
 }
 
 .fact:last-child {
     border-right: none;
 }
 
-.fact h3 {
+.fact h2 {
     font-size: 38px;
-    color: #0077a8;
+    color: #087ea4;
 }
 
 .fact p {
-    color: #657786;
+    color: #667782;
 }
 
 .section {
     padding: 90px 8%;
 }
 
-.section-title {
+.heading {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 55px;
 }
 
-.section-title p {
-    color: #0077a8;
+.heading p {
+    color: #087ea4;
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 2px;
 }
 
-.section-title h2 {
-    font-size: 38px;
-    color: #17324d;
+.heading h2 {
+    color: #082c46;
+    font-size: 42px;
 }
 
 .about {
     max-width: 1100px;
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 60px;
+    grid-template-columns: 400px 1fr;
+    gap: 65px;
     align-items: center;
+}
+
+.about-image {
+    width: 100%;
+    height: 440px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .about-image img {
-    width: 100%;
-    height: 430px;
     object-fit: cover;
-    border-radius: 7px;
+    object-position: center top;
 }
 
 .about-content h3 {
-    font-size: 27px;
+    font-size: 29px;
+    color: #082c46;
     margin-bottom: 18px;
 }
 
-.about-content p {
-    margin-bottom: 15px;
-    color: #596b7a;
+.about-content > p {
+    color: #5d6d78;
+    margin-bottom: 17px;
 }
 
-.success {
-    padding: 90px 8%;
-    background: #073b56;
-    color: white;
+.quote-box {
+    margin-top: 25px;
+    padding: 20px;
+    border-left: 4px solid #f4c430;
+    background: #fff9df;
 }
 
-.success .section-title h2 {
-    color: white;
+.quote-box p {
+    color: #4d4d4d;
+    font-style: italic;
+    margin-bottom: 8px;
 }
 
-.success .section-title p {
-    color: #8bd7ed;
+.quote-box strong {
+    color: #087ea4;
 }
 
-.success-box {
-    max-width: 1050px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1.5fr 0.8fr;
-    gap: 70px;
-    align-items: center;
+.achievements {
+    background: #edf5f8;
 }
 
-.success-text h3 {
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-
-.success-text p {
-    color: #d7e8ef;
-    margin-bottom: 15px;
-}
-
-.gold-medal {
-    text-align: center;
-    padding: 40px 20px;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 10px;
-}
-
-.medal {
-    font-size: 70px;
-}
-
-.gold-medal h3 {
-    font-size: 70px;
-    color: #ffd166;
-    line-height: 1;
-}
-
-.gold-medal p {
-    color: #d7e8ef;
-}
-
-.cards {
+.achievement-grid {
     max-width: 1100px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
 }
 
-.card {
+.achievement-card {
     background: white;
-    padding: 30px 24px;
-    border: 1px solid #e1e7eb;
-    border-radius: 7px;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #dce6eb;
     transition: 0.3s;
 }
 
-.card:hover {
+.achievement-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-.card-icon {
-    font-size: 35px;
-    margin-bottom: 15px;
-}
-
-.card h3 {
+.number {
+    color: #087ea4;
+    font-weight: bold;
+    font-size: 14px;
     margin-bottom: 10px;
 }
 
-.card p {
-    color: #647789;
-    font-size: 14px;
+.achievement-card h3 {
+    color: #082c46;
+    font-size: 23px;
+    margin-bottom: 10px;
 }
 
-.journey {
-    padding: 90px 8%;
-    background: #eef6f9;
+.achievement-card p {
+    color: #65747d;
 }
 
 .timeline {
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
-    border-left: 3px solid #0077a8;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #087ea4;
+    transform: translateX(-50%);
 }
 
 .timeline-item {
+    width: 50%;
+    padding: 15px 45px;
     position: relative;
-    padding: 0 0 35px 40px;
+}
+
+.timeline-item:nth-child(odd) {
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: 50%;
 }
 
 .year {
     position: absolute;
-    left: -25px;
-    top: 0;
-    width: 48px;
-    height: 48px;
+    top: 15px;
+    width: 65px;
+    height: 65px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #0077a8;
-    color: white;
     border-radius: 50%;
-    font-size: 11px;
+    background: #087ea4;
+    color: white;
     font-weight: bold;
+}
+
+.timeline-item:nth-child(odd) .year {
+    right: -32px;
+}
+
+.timeline-item:nth-child(even) .year {
+    left: -32px;
 }
 
 .timeline-content {
     background: white;
-    padding: 20px 25px;
-    border-radius: 6px;
-    border: 1px solid #dce5ea;
+    padding: 23px;
+    border-radius: 8px;
+    border: 1px solid #dce6eb;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .timeline-content h3 {
-    margin-bottom: 5px;
+    color: #087ea4;
+    font-size: 22px;
+    margin-bottom: 7px;
 }
 
 .timeline-content p {
-    color: #667887;
-    font-size: 14px;
+    color: #64737d;
 }
 
-.quote-section {
+.success {
     padding: 90px 8%;
-    background: white;
-    text-align: center;
-}
-
-.quote-content {
-    max-width: 750px;
-    margin: auto;
-}
-
-.quote-content h2 {
-    font-size: 35px;
-    font-style: italic;
-    color: #17324d;
-}
-
-.quote-content p {
-    margin-top: 10px;
-    color: #647789;
-}
-
-.quote-content button {
-    margin-top: 25px;
-    padding: 10px 18px;
-    border: none;
-    border-radius: 5px;
-    background: #0077a8;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    align-items: center;
+    gap: 65px;
+    background: #082c46;
     color: white;
-    cursor: pointer;
 }
 
-.quote-content button:hover {
-    background: #005f85;
+.success-content {
+    max-width: 650px;
 }
 
-#message {
-    color: #0077a8;
+.success-content .subtitle {
+    color: #f4c430;
+}
+
+.success-content h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.success-content p:not(.subtitle) {
+    color: #d2e0e7;
+    margin-bottom: 18px;
+}
+
+.success-image {
+    height: 430px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.success-image img {
+    object-fit: cover;
+    object-position: center top;
+}
+
+.qualities {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+}
+
+.qualities > div {
+    padding: 25px 0;
+    border-bottom: 1px solid #dce4e8;
+}
+
+.qualities span {
+    color: #087ea4;
     font-weight: bold;
 }
 
-footer {
-    padding: 40px 8%;
+.qualities h3 {
+    font-size: 23px;
+    color: #082c46;
+    margin: 5px 0;
+}
+
+.qualities p {
+    color: #65747d;
+}
+
+.inspiration {
+    padding: 80px 8%;
     text-align: center;
-    background: #102a43;
+    background: #eaf4f8;
+}
+
+.inspiration h2 {
+    font-size: 35px;
+    color: #082c46;
+    margin-bottom: 15px;
+}
+
+.inspiration p {
+    color: #5d6d78;
+    margin-bottom: 25px;
+}
+
+.inspiration button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    background: #087ea4;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.inspiration button:hover {
+    background: #065d7a;
+}
+
+footer {
+    padding: 35px;
+    text-align: center;
+    background: #051d2d;
     color: white;
 }
 
-footer h2 {
+footer h3 {
     margin-bottom: 8px;
 }
 
 footer p {
-    color: #b9cbd5;
+    color: #b9cbd4;
 }
 
-footer hr {
-    max-width: 400px;
-    margin: 20px auto;
-    border: none;
-    border-top: 1px solid #456;
+footer .copyright {
+    margin-top: 8px;
+    color: #f4c430;
+    font-size: 13px;
 }
 
-footer small {
-    color: #9fb2bd;
-}
+@media (max-width: 850px) {
 
-body.dark {
-    background: #101820;
-    color: #e8f1f5;
-}
-
-body.dark .navbar {
-    background: #172a35;
-}
-
-body.dark .nav-links a {
-    color: #e8f1f5;
-}
-
-body.dark #themeBtn {
-    background: #172a35;
-    color: #8bd7ed;
-}
-
-body.dark .hero {
-    background: #142733;
-}
-
-body.dark .hero h1,
-body.dark .hero h2 {
-    color: white;
-}
-
-body.dark .hero p {
-    color: #b8cbd4;
-}
-
-body.dark .facts,
-body.dark .section,
-body.dark .quote-section {
-    background: #101820;
-}
-
-body.dark .fact {
-    border-color: #30434e;
-}
-
-body.dark .section-title h2,
-body.dark .about-content h3,
-body.dark .quote-content h2 {
-    color: white;
-}
-
-body.dark .about-content p,
-body.dark .card p {
-    color: #b8cbd4;
-}
-
-body.dark .card,
-body.dark .timeline-content {
-    background: #172a35;
-    border-color: #30434e;
-}
-
-body.dark .journey {
-    background: #142733;
-}
-
-@media (max-width: 800px) {
+    .navbar {
+        padding: 15px 5%;
+        height: auto;
+        flex-direction: column;
+        gap: 12px;
+    }
 
     .nav-links {
-        display: none;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .hero {
         flex-direction: column;
         text-align: center;
+        padding: 60px 5%;
     }
 
     .hero h1 {
-        font-size: 52px;
+        font-size: 55px;
+    }
+
+    .hero-photo {
+        width: min(390px, 100%);
+        height: 450px;
     }
 
     .facts {
+        width: 92%;
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .fact {
+    .fact:nth-child(2) {
         border-right: none;
     }
 
@@ -485,47 +506,79 @@ body.dark .journey {
         grid-template-columns: 1fr;
     }
 
-    .success-box {
+    .about-image {
+        max-width: 450px;
+        margin: auto;
+    }
+
+    .success {
         grid-template-columns: 1fr;
     }
 
-    .cards {
-        grid-template-columns: repeat(2, 1fr);
+    .success-image {
+        max-width: 450px;
+        width: 100%;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
 
-    .navbar {
-        padding: 0 5%;
+    .hero h1 {
+        font-size: 45px;
     }
 
-    .hero {
-        padding: 60px 5%;
+    .hero h3 {
+        font-size: 20px;
     }
 
-    .hero-image img {
-        width: 100%;
+    .hero-photo {
         height: 400px;
-    }
-
-    .facts {
-        grid-template-columns: 1fr;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
     }
 
     .section {
         padding: 65px 5%;
     }
 
-    .section-title h2 {
-        font-size: 30px;
+    .heading h2 {
+        font-size: 32px;
     }
 
-    .quote-content h2 {
-        font-size: 26px;
+    .achievement-grid,
+    .qualities {
+        grid-template-columns: 1fr;
     }
-}
+
+    .timeline::before {
+        left: 25px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 70px;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd) {
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd) .year,
+    .timeline-item:nth-child(even) .year {
+        left: -7px;
+        right: auto;
+    }
+
+    .success {
+        padding: 65px 5%;
+    }
+
+    .success-content h2 {
+        font-size: 32px;
+    }
+
+    .success-image {
+        height: 400px;
+    }
+    }
