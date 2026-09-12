@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Phelps - Tribute Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Michael Phelps</div>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#journey">Journey</a>
+        </div>
+
+        <button id="themeBtn">Dark Mode</button>
+    </nav>
+
+    <header class="hero">
+
+        <div class="hero-text">
+            <p class="subtitle">TRIBUTE TO A LEGEND</p>
+
+            <h1>Michael Phelps</h1>
+
+            <h2>The Most Decorated Olympian in History</h2>
+
+            <p>
+                Michael Phelps is an American former competitive swimmer
+                and one of the greatest athletes in Olympic history.
+                His dedication, discipline and determination made him
+                a worldwide sporting icon.
+            </p>
+
+            <a href="#about" class="button">Discover His Story</a>
+        </div>
+
+        <div class="hero-image">
+            <img
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Michael%20Phelps.jpg"
+                alt="Michael Phelps">
+        </div>
+
+    </header>
+
+    <section class="facts">
+
+        <div class="fact">
+            <h3>23</h3>
+            <p>Gold Medals</p>
+        </div>
+
+        <div class="fact">
+            <h3>28</h3>
+            <p>Olympic Medals</p>
+        </div>
+
+        <div class="fact">
+            <h3>5</h3>
+            <p>Olympic Games</p>
+        </div>
+
+        <div class="fact">
+            <h3>2000</h3>
+            <p>Olympic Debut</p>
+        </div>
+
+    </section>
+
+    <section id="about" class="section">
+
+        <div class="section-title">
+            <p>ABOUT HIM</p>
+            <h2>Who is Michael Phelps?</h2>
+        </div>
+
+        <div class="about">
+
+            <div class="about-image">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Phelps%20Nata%C3%A7%C3%A3o%20swimming%20%281%29.jpg"
+                    alt="Michael Phelps swimming">
+            </div>
+
+            <div class="about-content">
+
+                <h3>A swimmer who changed Olympic history</h3>
+
+                <p>
+                    Michael Fred Phelps II was born on June 30, 1985,
+                    in Baltimore, Maryland, USA. He started swimming
+                    at a young age and quickly showed exceptional
+                    talent in the sport.
+                </p>
+
+                <p>
+                    Phelps made his Olympic debut at the 2000 Sydney
+                    Games when he was only 15 years old. Over the
+                    following years, he became one of the most
+                    successful swimmers in history.
+                </p>
+
+                <p>
+                    Across five Olympic Games, he won 28 medals:
+                    23 gold, 3 silver and 2 bronze. His achievements
+                    have made him an inspiration for athletes around
+                    the world.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="success">
+
+        <div class="section-title">
+            <p>SUCCESS STORY</p>
+            <h2>23 Olympic Gold Medals</h2>
+        </div>
+
+        <div class="success-box">
+
+            <div class="success-text">
+
+                <h3>Built through hard work</h3>
+
+                <p>
+                    Michael Phelps' success was not achieved overnight.
+                    Years of training, discipline and determination
+                    helped him reach the highest level of swimming.
+                </p>
+
+                <p>
+                    His greatest performance came at the 2008 Beijing
+                    Olympics, where he won eight gold medals in a
+                    single Olympic Games.
+                </p>
+
+                <p>
+                    At the 2016 Rio Olympics, Phelps added five more
+                    gold medals and completed his Olympic career with
+                    a record-breaking 23 gold medals.
+                </p>
+
+            </div>
+
+            <div class="gold-medal">
+
+                <div class="medal">🥇</div>
+
+                <h3>23</h3>
+
+                <p>OLYMPIC GOLD MEDALS</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="achievements" class="section">
+
+        <div class="section-title">
+            <p>ACHIEVEMENTS</p>
+            <h2>His Greatest Accomplishments</h2>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">🥇</div>
+                <h3>23 Gold Medals</h3>
+                <p>
+                    The most Olympic gold medals won by any athlete.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🏅</div>
+                <h3>28 Olympic Medals</h3>
+                <p>
+                    His Olympic career includes 23 gold,
+                    3 silver and 2 bronze medals.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🏆</div>
+                <h3>Eight Golds in 2008</h3>
+                <p>
+                    He won eight gold medals at the Beijing
+                    Olympic Games.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🌊</div>
+                <h3>Swimming Legend</h3>
+                <p>
+                    His achievements have inspired generations
+                    of swimmers around the world.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="journey" class="journey">
+
+        <div class="section-title">
+            <p>HIS JOURNEY</p>
+            <h2>Important Moments</h2>
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="year">1985</div>
+
+                <div class="timeline-content">
+                    <h3>Born in Baltimore</h3>
+                    <p>
+                        Michael Phelps was born on June 30,
+                        1985, in Baltimore, Maryland.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2000</div>
+
+                <div class="timeline-content">
+                    <h3>Olympic Debut</h3>
+                    <p>
+                        At only 15 years old, Phelps competed
+                        in the Sydney Olympic Games.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2004</div>
+
+                <div class="timeline-content">
+                    <h3>Six Gold Medals</h3>
+                    <p>
+                        At the Athens Olympics, he won six gold
+                        medals and two bronze medals.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2008</div>
+
+                <div class="timeline-content">
+                    <h3>Eight Gold Medals</h3>
+                    <p>
+                        Phelps won eight gold medals at the
+                        Beijing Olympic Games.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2012</div>
+
+                <div class="timeline-content">
+                    <h3>London Olympics</h3>
+                    <p>
+                        He continued his success by winning
+                        six medals at the London Games.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2016</div>
+
+                <div class="timeline-content">
+                    <h3>Final Olympic Games</h3>
+                    <p>
+                        Phelps finished his Olympic career in Rio
+                        with five gold medals and 28 medals overall.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="quote-section">
+
+        <div class="quote-content">
+
+            <h2>“The more you dream, the farther you get.”</h2>
+
+            <p>— Michael Phelps</p>
+
+            <button id="quoteBtn">Show Another Message</button>
+
+            <p id="message"></p>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <h2>Michael Phelps</h2>
+
+        <p>
+            A tribute to dedication, discipline and determination.
+        </p>
+
+        <hr>
+
+        <small>
+            Created using HTML, CSS and JavaScript
+        </small>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
