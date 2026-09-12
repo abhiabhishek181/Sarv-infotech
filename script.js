@@ -1,33 +1,107 @@
-const themeBtn = document.getElementById("themeBtn");
+const navbar = document.getElementById('navbar');
 
-themeBtn.addEventListener("click", function () {
+function updateNavbar() {
+  if (window.scrollY > 60) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+}
+window.addEventListener('scroll', updateNavbar);
+updateNavbar();
 
-    document.body.classList.toggle("dark");
+const counters = document.querySelectorAll('.counter-num');
+let countersStarted = false;
 
-    if (document.body.classList.contains("dark")) {
-        themeBtn.textContent = "Light Mode";
-    } else {
-        themeBtn.textContent = "Dark Mode";
+function animateCounters() {
+  counters.forEach(counter => {
+    const target = parseInt(counter.getAttribute('data-target'), 10);
+    const duration = 1400;
+    const startTime = performance.now();
+
+    function step(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      counter.textContent = Math.floor(eased * target);
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        counter.textContent = target;
+      }
     }
+    requestAnimationFrame(step);
+  });
+}
 
+const counterSection = document.getElementById('counters');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !countersStarted) {
+      countersStarted = true;
+      animateCounters();
+    }
+  });
+}, { threshold: 0.4 });
+
+if (counterSection) observer.observe(counterSection);
+
+const canvas = document.getElementById('rippleCanvas');
+const ctx = canvas.getContext('2d');
+let ripples = [];
+let animationId;
+
+function resizeCanvas() {
+  const hero = document.querySelector('.hero');
+  canvas.width = hero.offsetWidth;
+  canvas.height = hero.offsetHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+function spawnRipple(x, y) {
+  ripples.push({ x, y, radius: 0, alpha: 0.5 });
+}
+
+function autoSpawn() {
+  const x = Math.random() * canvas.width * 0.7;
+  const y = Math.random() * canvas.height;
+  spawnRipple(x, y);
+}
+setInterval(autoSpawn, 1800);
+
+document.querySelector('.hero').addEventListener('click', (e) => {
+  const rect = canvas.getBoundingClientRect();
+  spawnRipple(e.clientX - rect.left, e.clientY - rect.top);
 });
 
-const quoteBtn = document.getElementById("quoteBtn");
-const message = document.getElementById("message");
+function drawRipples() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ripples.forEach(r => {
+    ctx.beginPath();
+    ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
+    ctx.strokeStyle = `rgba(123, 224, 240, ${r.alpha})`;
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    r.radius += 0.8;
+    r.alpha -= 0.004;
+  });
+  ripples = ripples.filter(r => r.alpha > 0);
+  animationId = requestAnimationFrame(drawRipples);
+}
+drawRipples();
 
-const messages = [
-    "Dream big and keep working for it.",
-    "Hard work creates extraordinary results.",
-    "Never give up when the goal is important.",
-    "Discipline is the foundation of success.",
-    "Believe in yourself and keep moving forward."
-];
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (prefersReducedMotion) {
+  cancelAnimationFrame(animationId);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
 
-quoteBtn.addEventListener("click", function () {
-
-    const randomNumber =
-        Math.floor(Math.random() * messages.length);
-
-    message.textContent = messages[randomNumber];
-
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
 });
